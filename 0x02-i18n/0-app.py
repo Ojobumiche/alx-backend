@@ -7,8 +7,11 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=["GET"], strict_slash=False)
 def greeting():
+        """
+    a route is created with a get method
+    """
     return render_template('0-index.html')
 
 
